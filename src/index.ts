@@ -5,10 +5,11 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 /* ROUTE IMPORTS */
-import dashboardRoutes from "./routes/dashboardRoutes";
-import productRoutes from "./routes/productRoutes";
-import userRoutes from "./routes/userRoutes";
-import expenseRoutes from "./routes/expenseRoutes"
+// In src/index.ts, change imports like this:
+import dashboardRoutes from "./routes/dashboardRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import expenseRoutes from "./routes/expenseRoutes.js";
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -25,7 +26,7 @@ app.use(cors());
 app.use("/dashboard", dashboardRoutes); // Dashboard
 app.use("/products", productRoutes);
 app.use("/users", userRoutes);
-app.use("/expenses", expenseRoutes)
+app.use("/expenses", expenseRoutes);
 
 /* SERVER */
 const port = Number(process.env.PORT) || 8000;
